@@ -1,0 +1,348 @@
+body {
+    width: 970px;
+}
+
+.wrap {
+    height: 400px;
+    width: 800px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.ul1 {
+    position: absolute;
+}
+
+
+.ul2 {
+    position: absolute;
+    text-align: center;
+    right: 10px;
+    bottom: 5px;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.on {
+    cursor : pointer;
+    height: 35px;
+    width: 35px;
+    font-size: 25px;
+    border-radius: 15px;
+    background: rgba(255, 251, 240, 0.5);
+    color: black;
+    text-align: center ;
+}
+
+
+li {
+    list-style-type: none;
+    margin: auto;
+}
+
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+p {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+p1 {
+    font-size: 10px;
+    text-align: center;
+}
+
+.showp {
+    cursor : pointer;
+    width: 400px;
+    height: 200px;
+    background: rgba(0,0,0,0.5);
+    color: aliceblue;
+    font-size: 10px;
+    font-weight: lighter;
+    text-align: left;
+    overflow-y: scroll;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+::-webkit-scrollbar {
+    width: 20px;
+    background: rgba(0,0,0,0);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 251, 240, 0.5);
+    border-radius: 5px;
+}
+
+
+a {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.navigation {
+    font-size: 25px;
+    color: aliceblue;
+    text-align: left;
+}
+
+sub {
+    font-size: 8px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.button1 {
+    background: black;
+    color: aliceblue;
+    border: none;
+    font-size: 15px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+}
+
+.button1:hover {
+    cursor : pointer;
+    background: aliceblue;
+    color: black;
+    font-size: 15px;
+}
+
+.button2 {
+    background: black;
+    color: aliceblue;
+    border: none;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.button2:hover {
+    cursor : pointer;
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.button3 {
+    background: none;
+    color: black;
+    border: none;
+    font-size: 25px;
+    margin: 20px;
+
+}
+.button3:hover {
+    cursor : pointer;
+    background: rgba(0,0,0,0.5);
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 15px;
+}
+
+
+
+.div1 {
+    background: black;
+}
+.div2 {
+    width: 870px;
+    margin: auto;
+    padding-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px #cac6c6;
+}
+.div3 {
+    background: black;
+    color: aliceblue;
+    font-size: 8px;
+    text-align: center;
+}
+
+.div4 {
+    background: black;
+    color: aliceblue;
+    border-radius: 15px;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.div5 {
+    width: 500px;
+    height: 300px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px #cac6c6;
+}
+
+
+.exhibition {
+    width: 970px;
+    text-align: center;
+}
+.table1 {
+    padding: 10px;
+    border-spacing: 40px;
+}
+.table2 {
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 0 25px #cac6c6;
+}
+
+.searchtable {
+    padding-right:20px;
+    width: 900px;
+    height: 400px;
+    margin: 15px 30px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    border-spacing: 15px;
+    box-shadow: 0 0 25px #cac6c6;
+}
+.searchtabletd {
+   background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    width: 270px;
+    height: 150px;
+}
+.searchp {
+    width: 150px;
+    height: 50px;
+    font-size: 3px;
+    text-align: left;
+    font-weight: lighter;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.searchtd {
+    text-align: left;
+    font-size: 15px;
+}
+
+.usertable {
+    padding-right:20px;
+    width: 870px;
+    height: 400px;
+    margin: 15px 30px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    border-spacing: 15px;
+    box-shadow: 0 0 25px #cac6c6;
+}
+.usermessage {
+    width: 800px;
+    height: 200px;
+    text-align: center;
+    border-radius: 15px;
+    border-spacing: 50px;
+}
+.usercollection {
+    cursor : pointer;
+    background: rgba(0,0,0,0.5);
+    color: aliceblue;
+    width: 850px;
+    height: 200px;
+    margin-left: 10px;
+    overflow-y: scroll;
+    font-size: 10px;
+    border-radius: 5px;
+}
+::-webkit-scrollbar {
+    width: 20px;
+    background: rgba(0,0,0,0);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 251, 240, 0.5);
+    border-radius: 5px;
+}
+
+
+.showdiv {
+    padding-right:20px;
+    width: 850px;
+    height: 580px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px #cac6c6;
+}
+
+
+.form1 {
+    width: 270px;
+    margin: auto;
+    text-align: right;
+}
+
+
+
+/*图片放大*/
+.box {
+    width:400px;
+    height:500px;
+    margin:10px;
+    position:relative;
+}
+.big {
+    width:150px;
+    height:150px;
+    position:absolute;
+    top:0;
+    left:0;
+    overflow:hidden;
+    display:none;
+    border-radius: 150px;
+    box-shadow: 0 0 25px #cac6c6;
+}
+.mask {
+    width:150px;
+    height:150px;
+    position:absolute;
+    top:0;
+    left:0;
+    cursor:move;
+    display:none;
+}
+.small {
+    position:absolute;
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    padding-top: 50px;
+
+}
+.box img {
+    vertical-align:top;
+}
+#bigBox img {
+    position:absolute;
+}
+/*搜索*/
+.flip
+{
+    margin:0px;
+    padding:5px;
+    text-align:center;
+    background:#e5eecc;
+    border:solid 1px #c3c3c3;
+}
+.panel
+{
+    height:120px;
+    display:none;
+}

@@ -1,85 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Show</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+
 </head>
 
-<style type="text/css">
-    ul {
-        background: black;
-        list-style-type: none;
-    }
-
-    ul li {
-        float: right;
-        color: aliceblue;
-    }
-
-    p {
-        background: grey;
-        color: aliceblue;
-        font-size: 15px;
-        text-align: center;
-    }
-
-
-    p1 {
-        font-size: 20px;
-        color: aliceblue;
-        font-weight: bold;
-    }
-
-    p2 {
-        font-size: 10px;
-        color: aliceblue;
-    }
-
-    h2 {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    h3 {
-        height: 20px;
-        text-align: center;
-    }
-
-    button {
-        float: right;
-        background: blue;
-        color: aliceblue;
-    }
-</style>
-
-
 <body>
-
-<div class="header" style="background: black">
-    <ul>
-        <p1>Art Store</p1>
-        <sub>
-            <a href="http://localhost:63339/lab1/singin.html?_ijt=v4cgecmmjshjedid2ph5d4pjke">登录</a>
-            <p2>or</p2>
-            <a href="http://localhost:63339/lab1/register.html?_ijt=ih6b7dq8aso5af2suvur1v1cs2">注册</a>
-        </sub>
-        <li>
-            <p2>未登录</p2>
+<div class="div1">
+    <ul style="color: aliceblue">
+        <p1 class="navigation">Art Store</p1>
+            <button class="button1"
+                    onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/homepage.html?_ijt=865okr6qasvq5es5vbt0bsat3j#'">
+                首页
+            </button>
+            <button class="button1"
+                    onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/search.html?_ijt=lif4lqvaf9ve5hd3pkjmd223ki'">
+                搜索
+            </button>
+            <button class="button1"
+                    onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/singin.html?_ijt=v4cgecmmjshjedid2ph5d4pjke'">
+                登录
+            </button>
+            <button class="button1"
+                    onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/register.html?_ijt=ih6b7dq8aso5af2suvur1v1cs2'">
+                注册
+            </button>
+        <li style="float: right">
+            <p>未登录</p>
         </li>
     </ul>
 </div>
 
-<div class="picture">
+<div class="showdiv">
     <table>
         <tr>
-            <th><img src="resources/img/14.jpg" width="300" height="400"/></th>
+            <th width="300" height="400">
+                <div class="box" id="box">
+                    <div id="smallBox" class="small">
+                        <img src="resources/img/14.jpg" width="300" height="450">
+                        <div id="mask" class="mask">
+                            <div id="bigBox" class="big">
+                                <img src="resources/img/14.jpg" width="300" height="400" id="bigPic">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </th>
             <td>
                 <h1 style="text-align: center">Two Nudes</h1>
-                <h2>Pablo Picasso</h2>
+                <button class="button3" onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/search.html?_ijt=lif4lqvaf9ve5hd3pkjmd223ki'">
+                    Pablo Picasso</button>
+                <br/>
 
-                <p5 style="text-align: center">price : $200</p5>
+                <p5>price : $200</p5>
 
-                <p>
+                <textarea class="showp">
                     'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two Nudes</em> derive
                     from Picasso\'s interest at the time in the ancient Iberian sculpture of his native Spain. Like many
                     artists in the first decades of the twentieth century, Picasso found ancient and non-western art to be
@@ -88,19 +65,70 @@
                     bears a strong resemblance to that of the figure on the far left in <em>Les Demoiselles d\'Avignon</em>.
                     Like the woman in Demoiselles, with whom she shares her chiseled nose and dark, hollow eyes, this woman
                     holds open what appears to be a curtain and gazes outward, as though beckoning viewers in.
-                </p>
+                </textarea>
 
-                <button type="button">收藏</button>
-
-
+                <button class="button2" style="float: right">收藏</button>
             </td>
         </tr>
     </table>
 </div>
 
-<div class="footer" style="background: black">
-    <h3></h3>
+<div class="div3">
+    <h2>ArtStore.Produced and maintained by Achillessanger at 2018.4.1.All Rights Reserved</h2>
 </div>
+
+<script>
+    var smallBox = document.getElementById('smallBox');
+    var mask = document.getElementById('mask');
+    var bigBox = document.getElementById('bigBox');
+    var box = document.getElementById('box')
+    var bigPic = document.getElementById('bigPic')
+    //鼠标经过小盒子，显示大盒子
+    smallBox.onmouseover = function() {
+        bigBox.style.display = "block";
+        mask.style.display = "block";
+    }
+
+    smallBox.onmouseout = function() {
+        bigBox.style.display = "none";
+        mask.style.display = "none";
+    }
+    smallBox.onmousemove = function(event) {
+        //遮罩跟随鼠标
+        var event = event || widow.event;
+        var pageX = event.pageX || event.clientX + document.documentElement.scrollLeft;
+        var pageY = event.pageY || event.clientY + document.documentElement.scrollTop;
+
+        var targetX = pageX - box.offsetLeft - mask.offsetWidth / 2;
+        var targetY = pageY - box.offsetLeft - mask.offsetHeight / 2;
+        //限制mask移动范围
+        if (targetX < 0) {
+            targetX = 0;
+        }
+        if (targetY < 0) {
+            targetY = 0;
+        }
+
+        if (targetX > smallBox.offsetWidth - mask.offsetWidth) {
+            targetX = smallBox.offsetWidth - mask.offsetWidth;
+        }
+
+        if (targetY > smallBox.offsetHeight - mask.offsetHeight) {
+            targetY = smallBox.offsetHeight - mask.offsetHeight;
+        }
+
+        mask.style.left = targetX + "px";
+        mask.style.top = targetY + "px";
+        //按照比例移动大图
+        var bigToMove = bigPic.offsetWidth - bigBox.offsetWidth;
+        var maskToMove = smallBox.offsetWidth - mask.offsetWidth;
+        var rate = bigToMove / maskToMove;
+        bigPic.style.left = -rate * targetX + "px";
+        bigPic.style.top = -rate * targetY + "px";
+    }
+</script>
+
+
 
 </body>
 </html>

@@ -3,91 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <title>HomePage</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var wrap = document.getElementById('wrap'),
+                pic = document.getElementById('pic').getElementsByTagName("li"),
+                list = document.getElementById('list').getElementsByTagName('li'),
+                index = 0,
+                timer = null;
+
+            // 定义并调用自动播放函数
+            timer = setInterval(autoPlay, 2000);
+
+            // 鼠标划过整个容器时停止自动播放
+            wrap.onmouseover = function () {
+                clearInterval(timer);
+            }
+
+            // 鼠标离开整个容器时继续播放至下一张
+            wrap.onmouseout = function () {
+                timer = setInterval(autoPlay, 2000);
+            }
+            // 遍历所有数字导航实现划过切换至对应的图片
+            for (var i = 0; i < list.length; i++) {
+                list[i].onmouseover = function () {
+                    clearInterval(timer);
+                    index = this.innerText - 1;
+                    changePic(index);
+                };
+            }
+            ;
+
+            function autoPlay() {
+                if (++index >= pic.length) index = 0;
+                changePic(index);
+            }
+
+            // 定义图片切换函数
+            function changePic(curIndex) {
+                for (var i = 0; i < pic.length; ++i) {
+                    pic[i].style.display = "none";
+                    list[i].className = "";
+                }
+                pic[curIndex].style.display = "block";
+                list[curIndex].className = "on";
+            }
+        };
+    </script>
 </head>
 
-<style type="text/css">
-    ul {
-        list-style-type: none;
-        text-align: center;
-    }
-
-    table {
-        \margin: 0 auto;
-    }
-
-    td {
-        word-break: break-all;
-        word-wrap: break-word;
-    }
-
-    p {
-        font-size: 14px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    p1 {
-        font-size: 10px;
-        text-align: center;
-    }
-
-    a {
-        font-size: 14px;
-        font-weight: bold;
-    }
-
-    h1 {
-        font-size: 40px;
-        color: aliceblue;
-        text-align: center;
-    }
-
-    h2 {
-        height: 20px;
-        font-size: 10px;
-        color: aliceblue;
-        text-align: center;
-    }
-</style>
-
 <body>
-
-<div class="header" style="background: black">
-    <h1 style="text-align: center">Art Store</h1>
-    <h2 style="text-align: center">Where you find GENIUS and EXTROORDINARY</h2>
-</div>
-
-<div class="navbar">
-    <ul cellspacing="100">
-        <a href="http://localhost:63339/lab1/homepage.html?_ijt=865okr6qasvq5es5vbt0bsat3j#">首页</a>
-        <a href="#">搜索</a>
-        <a href="http://localhost:63339/lab1/singin.html?_ijt=v4cgecmmjshjedid2ph5d4pjke">登录</a>
-        <a href="http://localhost:63339/lab1/register.html?_ijt=ih6b7dq8aso5af2suvur1v1cs2">注册</a>
+<div class="div1">
+    <ul>
+        <p1 class="navigation">Art Store</p1>
+        <sub>Where you find GENIUS and EXTROORDINARY</sub>
+        <li style="float: right">
+            <button class="button1"
+                    onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/homepage.html?_ijt=865okr6qasvq5es5vbt0bsat3j#'">
+                首页
+            </button>
+            <button class="button1" onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/search.html?_ijt=lif4lqvaf9ve5hd3pkjmd223ki'">
+                搜索
+            </button>
+            <button class="button1"
+                    onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/singin.html?_ijt=v4cgecmmjshjedid2ph5d4pjke'">
+                登录
+            </button>
+            <button class="button1"
+                    onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/register.html?_ijt=ih6b7dq8aso5af2suvur1v1cs2'">
+                注册
+            </button>
+        </li>
     </ul>
 </div>
 
-<div class="headpicture">
-    <p style="text-align: center">
-        <img src="resources/img/213.jpg" width="800" height="400"/>
-    </p>
+<div class="div2">
+    <div class="wrap" id='wrap'>
+        <ul class="ul1" id="pic">
+            <li>
+                <a href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'>
+                    <img src="resources/img/14.jpg" width="800" height="400" alt="">
+                </a>
+            </li>
+            <li>
+                <a href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'>
+                    <img src="resources/img/15.jpg" width="800" height="400" alt="">
+                </a>
+            </li>
+            <li>
+                <a href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'>
+                    <img src="resources/img/16.jpg" width="800" height="400" alt="">
+                </a>
+            </li>
+            <li>
+                <a href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'>
+                    <img src="resources/img/18.jpg" width="800" height="400" alt="">
+                </a>
+            </li>
+            <li>
+                <a href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'>
+                    <img src="resources/img/26.jpg" width="800" height="400" alt="">
+                </a>
+            </li>
+        </ul>
+        <ul class="ul2" id="list">
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
 </div>
 
 <div class="exhibition">
-    <p>Most Viewed</p>
-    <table cellspacing="100" width="150">
+    <table class="table1">
         <tr>
-            <td>
-                <img src="resources/img/14.jpg" width="150" height="200"/>
+            <td class="table2">
+                <a href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'>
+                    <img src="resources/img/14.jpg" width="150" height="200"/>
+                </a>
                 <p>Two Nudes</p>
                 <p>Pablo Picasso</p>
                 <p1>
                     The terracotta shades and heavy monumentality of the figures in <em>Two Nudes</em> derive from
                     Picasso\'s interest at the time in the ancient Iberian sculpture of his native Spain. …… <br/>
                 </p1>
-                <a href="http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6">Learn More</a>
+                <br/>
+                <button class="button2"
+                        onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'">
+                    Learn More
+                </button>
             </td>
-            <td>
-                <img src="resources/img/15.jpg" width="150" height="200"/>
+            <td class="table2">
+                <a href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'>
+                    <img src="resources/img/15.jpg" width="150" height="200"/>
+                </a>
                 <p>Three Women</p>
                 <p>Pablo Picasso</p>
                 <p1>
@@ -97,10 +149,16 @@
                     his own
                     style. …… <br/>
                 </p1>
-                <a href="http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6">Learn More</a>
+                <br/>
+                <button class="button2"
+                        onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'">
+                    Learn More
+                </button>
             </td>
-            <td>
-                <img src="resources/img/16.jpg" width="150" height="200"/>
+            <td class="table2">
+                <a href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'>
+                    <img src="resources/img/16.jpg" width="150" height="200"/>
+                </a>
                 <p>Woman and Child on the Seashore</p>
                 <p>Pablo Picasso</p>
                 <p1>
@@ -108,13 +166,17 @@
                     painting
                     heavy-set figures in a neoclassical mode. …… <br/>
                 </p1>
-                <a href="http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6">Learn More</a>
+                <br/>
+                <button class="button2"
+                        onclick="javascrtpt:window.location.href='http://localhost:63339/lab1/show.html?_ijt=ghch9to0c8iiknlgmmriik23h6'">
+                    Learn More
+                </button>
             </td>
         </tr>
     </table>
 </div>
 
-<div class="footer" style="background: black">
+<div class="div3">
     <h2>ArtStore.Produced and maintained by Achillessanger at 2018.4.1.All Rights Reserved</h2>
 </div>
 
