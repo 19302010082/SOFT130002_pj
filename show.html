@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Show</title>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
-
 </head>
 
 <body>
@@ -30,6 +29,12 @@
         <li style="float: right">
             <p>未登录</p>
         </li>
+    </ul>
+</div>
+
+<div>
+    <ul>
+        <p id = showfootprint style="text-align: left"></p>
     </ul>
 </div>
 
@@ -67,7 +72,7 @@
                     holds open what appears to be a curtain and gazes outward, as though beckoning viewers in.
                 </textarea>
 
-                <button class="button2" style="float: right">收藏</button>
+                <button class="button2" style="float: right" onclick="collection()">收藏</button>
             </td>
         </tr>
     </table>
@@ -125,6 +130,12 @@
         var rate = bigToMove / maskToMove;
         bigPic.style.left = -rate * targetX + "px";
         bigPic.style.top = -rate * targetY + "px";
+    }
+
+
+
+    function collection() {
+        alert("收藏成功");
     }
 </script>
 

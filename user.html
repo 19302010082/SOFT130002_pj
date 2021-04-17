@@ -35,7 +35,7 @@
     <table class="usermessage">
         <tr>
             <td>
-                <img src="resources/user.jpg" width="100" height="100" alt="">
+                <img src="user.jpg" width="100" height="100" alt="">
             </td>
             <td style="text-align: left">
                 用户名 ：123<br/>
@@ -46,57 +46,70 @@
         </tr>
     </table>
 
+
     <div class="usercollection">
-    <table style="border-spacing: 20px">
-        <tr>
-            <td>书名：Two Nudes<td>
-            <td> 作者：Pablo Picasso<td>
-            <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
-                Nudes</em> derive……<td>
-        </tr>
-        <tr>
-            <td>书名：Two Nudes<td>
-            <td> 作者：Pablo Picasso<td>
-            <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
-                Nudes</em> derive……<td>
-        </tr>
-        <tr>
-            <td>书名：Two Nudes<td>
-            <td> 作者：Pablo Picasso<td>
-            <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
-                Nudes</em> derive……<td>
-        </tr>
-        <tr>
-            <td>书名：Two Nudes<td>
-            <td> 作者：Pablo Picasso<td>
-            <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
-                Nudes</em> derive……<td>
-        </tr>
-        <tr>
-            <td>书名：Two Nudes<td>
-            <td> 作者：Pablo Picasso<td>
-            <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
-                Nudes</em> derive……<td>
-        </tr>
-        <tr>
-            <td>书名：Two Nudes<td>
-            <td> 作者：Pablo Picasso<td>
-            <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
-                Nudes</em> derive……<td>
-        </tr>
-        <tr>
-            <td>书名：Two Nudes<td>
-            <td> 作者：Pablo Picasso<td>
-            <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
-                Nudes</em> derive……<td>
-        </tr>
+        <table style="border-spacing: 20px" id="table">
+            <tr id='1'>
+                <td>书名：Two Nudes1
+                <td>
+                <td> 作者：Pablo Picasso
+                <td>
+                <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
+                    Nudes</em> derive……
+                <td>
+                <button style="float: right" class="button2" onclick="remove(1)">
+                    删除
+                </button>
 
-
-
-
-    </table>
+            </tr>
+            <tr id='2'>
+                <td>书名：Two Nudes2
+                <td>
+                <td> 作者：Pablo Picasso
+                <td>
+                <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
+                    Nudes</em> derive……
+                <td>
+                <button style="float: right" class="button2" onclick="remove(2)">
+                    删除
+                </button>
+            </tr>
+            <tr id='3'>
+                <td>书名：Two Nudes3
+                <td>
+                <td> 作者：Pablo Picasso
+                <td>
+                <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
+                    Nudes</em> derive……
+                <td>
+                <button style="float: right" class="button2" onclick="remove(3)">
+                    删除
+                </button>
+            </tr>
+            <tr id='4'>
+                <td>书名：Two Nudes4
+                <td>
+                <td> 作者：Pablo Picasso
+                <td>
+                <td>简介： 'Two Nudes', 'The terracotta shades and heavy monumentality of the figures in <em>Two
+                    Nudes</em> derive……
+                <td>
+                <button style="float: right" class="button2" onclick="remove(4)">
+                    删除
+                </button>
+            </tr>
+        </table>
     </div>
+
+
 </div>
+
+
+<script>
+    function remove(id){
+        document.getElementById("table").deleteRow(document.getElementById(id).rowIndex);
+    }
+</script>
 
 </body>
 </html>
