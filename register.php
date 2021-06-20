@@ -51,6 +51,19 @@
         } else if (inspectletter(password1) || inspectnumber(password1)) {
             alert("密码格式错误");
         }else {
+
+        <?php
+            $conn = new mysqli("127.0.0.1:3307", "root", "", "1111");
+
+            $a =  'username';
+            $b =  'password1';
+
+            $sql = "insert into users value ('','$a','','$b','','','')";
+            $result = mysqli_query($conn,$sql);
+
+            $conn->close();
+            ?>
+
             alert("注册成功");
             window.location.href='http://localhost:801/homepage.php'
         }

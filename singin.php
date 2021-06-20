@@ -14,8 +14,8 @@
 
     <div>
         <form class="form1">
-            用户名 ：<input type="text" id="username" value=""><br/>
-            密码 ：<input type="password" id="password" value=""><br/>
+            用户名 ：<input type="text" id="username" name="username"><br/>
+            密码 ：<input type="password" id="password" name="password"><br/>
         </form>
 
 
@@ -46,13 +46,32 @@
 
         if (username === "" && password === "") {
             alert("用户名和密码不能为空");
-        }else if (username === "") {
+        } else if (username === "") {
             alert("用户名不能为空");
         } else if (password === "") {
             alert("密码不能为空");
-        }  else {
-            alert("登录成功");
-            window.location.href = 'http://localhost:801/homepage.php'
+        } else {
+
+            <?php
+            $conn = new mysqli("127.0.0.1:3307", "root", "", "1111");
+            $sql = "SELECT  name,password FROM users";
+            $result = $conn->query($sql);
+
+            $a = "<script>document.write(username)</script>";
+            $b = "<script>document.write(password)</script>";
+
+            while ($row = $result->fetch_assoc()) {
+                if ($a == $row["name"] && $b == $row["password"]) {
+                    echo "<script>" . "alert('登录成功')" . "</script>";
+                    header('location:homepage.php');
+                    break;
+                }
+            }
+            echo "<script>" . "alert('登录失败')" . "</script>";
+
+            $conn->close();
+            ?>
+
         }
     }
 </script>

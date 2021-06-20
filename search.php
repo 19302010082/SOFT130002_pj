@@ -24,6 +24,7 @@
         document.getElementById('page1').style.display = 'block';
         document.getElementById('page2').style.display = 'none';
     }
+
     function next() {
         document.getElementById('page1').style.display = 'none';
         document.getElementById('page2').style.display = 'block';
@@ -64,11 +65,25 @@
 
 <div id="none" style="display: block">
     <table class="searchtable">
-        <tr>
-            <td>
-                暂无搜索结果
-            </td>
-        </tr>
+        <?php
+        $conn = new mysqli("127.0.0.1:3307", "root", "", "1111");
+        $sql = "SELECT artworkID,title,artist,description FROM artworks";
+        $result = $conn->query($sql);
+
+        while ($row = $result->fetch_assoc()) {
+            $picture = "img/" . $row["artworkID"] . ".jpg" ;//获取图片相对路径
+            echo
+                "<tr>" .
+                "<td>" . "<img src=$picture width='100' height='120'>" . "<td>" .
+
+                "<td>" . "书名：" . $row["title"] . "<td>" .
+                "<td>" . "作者：" . $row["artist"] . "<td>" .
+                "<td>" . "简介：" . $row["description"] . "<td>" .
+
+                "</tr>";
+        }
+        $conn->close();
+        ?>
     </table>
 </div>
 
@@ -166,12 +181,20 @@
                     </tr>
                 </table>
             </td>
-            <td><table class="searchtabletd"></table></td>
+            <td>
+                <table class="searchtabletd"></table>
+            </td>
         </tr>
         <tr>
-            <td><table class="searchtabletd"></table></td>
-            <td><table class="searchtabletd"></table></td>
-            <td><table class="searchtabletd"></table></td>
+            <td>
+                <table class="searchtabletd"></table>
+            </td>
+            <td>
+                <table class="searchtabletd"></table>
+            </td>
+            <td>
+                <table class="searchtabletd"></table>
+            </td>
         </tr>
         <tr>
             <td>
